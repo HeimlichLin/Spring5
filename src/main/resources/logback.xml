@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true">
+	<!--定義日誌檔案的儲存地址 勿在 LogBack 的配置中使用相對路徑 -->
+	<appender name="STDOUT"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<encoder
+			class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>[%date{yyy-MM-dd HH:mm:ss}] [%thread] [ %-5level] %logger{40} - %message%n
+			</pattern>
+
+			<!-- <pattern>[%d{yyy-MM-dd HH:mm:ss}][%p][ %l]: %m %x %n</pattern> -->
+		</encoder>
+	</appender>
+
+	<logger name="idv.heimlich" level="DEBUG" />
+
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+	</root>
+
+</configuration>
